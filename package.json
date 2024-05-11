@@ -1,0 +1,22 @@
+{
+  "name": "my-typescript-package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && node src/index.js",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "exp": "^57.2.1",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "telegram-bot-api": "^2.0.1"
+  }
+}
