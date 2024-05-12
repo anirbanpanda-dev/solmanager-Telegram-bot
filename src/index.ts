@@ -1,23 +1,9 @@
-import { myFunction } from "./function";
+
 import { handleMessage } from "./handler";
 
-// import {
-//     Connection,
-//     Keypair, 
-//     LAMPORTS_PER_SOL, 
-//     PublicKey,
-//     Transaction,
-//     TransactionInstruction,
-//     sendAndConfirmTransaction
-// } from "@solana/web3.js"
-// import {handleMessage} from "./handler"
-
-
-// import { express, Request, Response } from 
-// import {} from 'express'
-// import TelegramBot from 'telegram-bot-api';
 import express, { Request, Response } from 'express';
 const TelegramBot = require('telegram-bot-api');
+import "dotenv/config";
 
 
 const PORT = process.env.PORT || 4040;
@@ -26,19 +12,16 @@ const app = express();
 app.use(express.json());
 
 app.get('/', async (req: Request, res: Response) => {
-    // console.log('GET');
-    res.send('Hello GET');
-    
+    res.send('GET request received');
 });
 
 app.post('/', async (req: Request, res: Response) => {
-    // console.log('POST');
-    res.send('Hello POST');
+    res.send('POST request received');
     const { message } = req.body;
-    console.log("req = ", message)
+    console.log("req = ", message);
 
     const bot = new TelegramBot({
-      token: '7036832058:AAFUe80ogYH4QqatEJwJQrSSNyNXnraVIDY',
+      token: "BOT_TOKEN",
     });
 
     let response = "";

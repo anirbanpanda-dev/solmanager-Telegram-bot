@@ -77,7 +77,7 @@ export const handleMessage =  async (cmd: string) : Promise<string> => {
             console.log("cmdArgs 1  = ", cmdArgs[1])
             console.log("cmdArgs 2  = ", cmdArgs[2])
             console.log("cmdArgs 3  = ", cmdArgs[3])
-            const payer = accountHandler.get(cmdArgs[1]);//  accountHandler[cmdArgs[1]];
+            const payer = accountHandler.get(cmdArgs[1]);
             const receiver = accountHandler.get(cmdArgs[2]);
             amt = cmdArgs[3];
             if (receiver != undefined && payer != undefined){
@@ -89,8 +89,6 @@ export const handleMessage =  async (cmd: string) : Promise<string> => {
                     }),
                 );
                 
-            
-                // Sign and send the transaction
                 const signature = sendAndConfirmTransaction(
                     connection,
                     transaction,
