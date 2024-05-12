@@ -3,7 +3,7 @@ import { handleMessage } from "./handler";
 
 import express, { Request, Response } from 'express';
 const TelegramBot = require('telegram-bot-api');
-import "dotenv/config";
+ 
 
 
 const PORT = process.env.PORT || 4040;
@@ -21,8 +21,9 @@ app.post('/', async (req: Request, res: Response) => {
     console.log("req = ", message);
 
     const bot = new TelegramBot({
-      token: "BOT_TOKEN",
+      token: '7036832058:AAFUe80ogYH4QqatEJwJQrSSNyNXnraVIDY', 
     });
+    
 
     let response = "";
 
